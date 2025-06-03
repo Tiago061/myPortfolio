@@ -16,13 +16,9 @@ async function main() {
 
     app.use(express.json())
 
-    if (!process.env.MONGO_CS || !process.env.MONGO_DB_NAME) {
-        throw new Error("Variáveis de ambiente do MongoDB não configuradas!");
-    }
-
     const mongoConnection = await Mongo.connect({
-        mongoConnectionString: process.env.MONGO_CS, 
-        mongoDbName: process.env.MONGO_DB_NAME , 
+        mongoConnectionString: 'mongodb+srv://tiagozk061:VidcCl52tB0SaOES@portfolioth.4boje81.mongodb.net/?retryWrites=true&w=majority&appName=portfolioth', 
+        mongoDbName: 'portfolioth',
     })
     console.log(mongoConnection)
     app.get('/', (req, res) => {
