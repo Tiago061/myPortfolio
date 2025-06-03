@@ -1,11 +1,11 @@
 import express from 'express'
 import { Mongo } from './database/mongodb'
-import { config } from 'dotenv'
+import dotenv from 'dotenv'
 
 
 
 
-config()
+dotenv.config(); 
 
 async function main() {
 
@@ -17,8 +17,8 @@ async function main() {
     app.use(express.json())
 
     const mongoConnection = await Mongo.connect({
-        mongoConnectionString: 'mongodb+srv://tiagozk061:VidcCl52tB0SaOES@portfolioth.4boje81.mongodb.net/?retryWrites=true&w=majority&appName=portfolioth', 
-        mongoDbName: 'portfolioth',
+        mongoConnectionString: process.env.MONGO_DB ?? "", 
+        mongoDbName: process.env.MONGO_DB_NAME ?? "",
     })
     console.log(mongoConnection)
     app.get('/', (req, res) => {
