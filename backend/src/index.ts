@@ -1,11 +1,11 @@
 import express from 'express'
 import { Mongo } from './database/mongodb'
-import { config } from 'dotenv'
+import dotenv from 'dotenv'
 
 
 
 
-config()
+dotenv.config(); 
 
 async function main() {
 
@@ -16,13 +16,9 @@ async function main() {
 
     app.use(express.json())
 
-    if (!process.env.MONGO_CS || !process.env.MONGO_DB_NAME) {
-        throw new Error("Variáveis de ambiente do MongoDB não configuradas!");
-    }
-
     const mongoConnection = await Mongo.connect({
-        mongoConnectionString: process.env.MONGO_CS, 
-        mongoDbName: process.env.MONGO_DB_NAME , 
+        mongoConnectionString: process.env.MONGO_DB ?? "", 
+        mongoDbName: process.env.MONGO_DB_NAME ?? "",
     })
     console.log(mongoConnection)
     app.get('/', (req, res) => {
