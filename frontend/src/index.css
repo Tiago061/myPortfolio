@@ -1,5 +1,18 @@
 
 @import "tailwindcss";
-:root {
 
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: Inter;
+}
+:root {
+    font-size: x-large;
+    min-height: 100vh;
+}
+
+main{
+  max-width: 1280px;
+  margin: 0 auto;
 }

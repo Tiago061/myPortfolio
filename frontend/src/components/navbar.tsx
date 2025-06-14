@@ -13,29 +13,29 @@ export default function NavBar(){
 
     return(
         <BrowserRouter>
-            <nav>
-                <div className="">
-                    <Link to={'/'}>
-                        <img src="/logotipoTH.png" alt="Logo" />
-                    </Link>
+            <nav className="flex items-center justify-between w-full max-w-7xl mx-auto lg:justify-around  ">
+                <Link to={'/'}>
+                    <img src="/logocubo.png" alt="Logo" className="h-10"/>
+                </Link>
 
-                    <div>
-                        <Link to={'/'}>Home</Link>
-                        <Link to={'/about'}>About</Link>
-                        <Link to={'/users'}>Tech Stack</Link>
-                        <Link to={'/projects'}>Projects</Link>
-                        <Link to={'/contact'}>Contact</Link>
-                    </div>
+                <div className="hidden lg:flex gap-3 ">
+                    <Link to={'/'}>Home</Link>
+                    <Link to={'/about'}>About</Link>
+                    <Link to={'/users'}>Tech Stack</Link>
+                    <Link to={'/projects'}>Projects</Link>
+                    <Link to={'/contact'}>Contact</Link>
                 </div>
-                
-                <div>
+
+              
+
+                <div className="hidden lg:flex gap-3">
                     <FaGithub />
                     <FaLinkedin />
                 </div>
-                <div className="">
-                    <img src="/logotipoTH.png" alt="Logo" />
+
+                <div className="lg:hidden md:border-s-black ">
                     <div className="">
-                        <LuMenu className="" onClick={handleOpenMenu}/>
+                        <LuMenu className="h-10" onClick={handleOpenMenu}/>
                     </div>
                 </div>
 
@@ -45,9 +45,10 @@ export default function NavBar(){
                             onClose={handleOpenMenu}
                             >
                                 <div className="">
-                                <Link to={'/'}  className="" >Home</Link>
-                                <Link to={'/'}  className="" >Plates</Link>
-                                <Link to={'/'}  className="">Profile</Link>
+                                    <Link to={'/'}  className="" >Home</Link>
+                                    <Link to={'/'}  className="" >About</Link>
+                                    <Link to={'/'}  className="">Tech Stack</Link>
+                                    <Link to={'/'}  className="">Contact</Link>
                                 </div>
                             
                         </Drawer>
