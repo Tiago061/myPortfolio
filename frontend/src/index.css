@@ -2,10 +2,9 @@
 @import "tailwindcss";
 
 * {
-  margin: 0;
-  padding: 0;
   text-decoration: none;
   font-family: Inter;
+  box-sizing: border-box;
 }
 :root {
     font-size: x-large;
@@ -14,5 +13,4 @@
 
 main{
   max-width: 1280px;
-  margin: 0 auto;
 }

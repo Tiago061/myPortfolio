@@ -13,8 +13,8 @@ export default function NavBar(){
 
     return(
         <BrowserRouter>
-            <nav className="flex items-center justify-between w-full max-w-7xl mx-auto lg:justify-around  ">
-                <Link to={'/'}>
+            <nav className="flex items-center justify-between w-full max-w-7xl mx-auto lg:justify-around ">
+                <Link to={'/'} >
                     <img src="/logocubo.png" alt="Logo" className="h-10"/>
                 </Link>
 
@@ -28,13 +28,13 @@ export default function NavBar(){
 
               
 
-                <div className="hidden lg:flex gap-3">
+                <div className="hidden lg:flex gap-3 ">
                     <FaGithub />
                     <FaLinkedin />
                 </div>
 
-                <div className="lg:hidden md:border-s-black ">
-                    <div className="">
+                <div className="lg:hidden">
+                    <div>
                         <LuMenu className="h-10" onClick={handleOpenMenu}/>
                     </div>
                 </div>
@@ -43,8 +43,13 @@ export default function NavBar(){
                             anchor='right'
                             open={openMenu}
                             onClose={handleOpenMenu}
+                             PaperProps={{
+                                    style: {
+                                        width: '250px', 
+                                        }
+                                }}
                             >
-                                <div className="">
+                                <div className="flex items-center justify-center flex-col p-8 gap-1 h-full ">
                                     <Link to={'/'}  className="" >Home</Link>
                                     <Link to={'/'}  className="" >About</Link>
                                     <Link to={'/'}  className="">Tech Stack</Link>
